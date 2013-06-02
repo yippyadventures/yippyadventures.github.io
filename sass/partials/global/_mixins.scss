@@ -1,0 +1,11 @@
+@mixin icon-link($img, $background_x, $background_y, $width, $height) {
+  background: image-url($img) $background_x $background_y;
+  width: $width;
+  height: $height;
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+

@@ -1,0 +1,80 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "susy";
+@import "compass/css3/transform";
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+$total-columns: 12;
+$column-width: 4em;
+$gutter-width: 1em;
+$grid-padding: $gutter-width;
+
+$show-grid-backgrounds: false;
+
+// Style
+
+body {
+  background-color: $darkPurple;
+  margin: 0;
+}
+
+.content {
+  background-image: image-url('face.png');
+  margin-left: auto;
+  margin-right: auto;
+  width: 1426px;
+  height: 1768px;
+  margin-bottom: 100px;
+}
+.container {
+  @include container;
+  @include susy-grid-background;
+}
+
+.link-text {
+  display: none;
+}
+#links {
+  list-style: none;
+  @include push(3);
+  @include span-columns(6);
+  margin-top: 657px;
+  @include transform(rotate(-6deg));
+  padding-left: 0px;
+  li {
+    list-style: none;
+    float: left;
+
+    &#facebook {
+      @include icon-link('icons.png', 0, -201px, 144px, 135px);
+    }
+
+    &#youtube {
+      margin-top: -8px;
+      @include icon-link('icons.png', 0, -939px, 145px, 149px);
+    }
+
+    &#twitter {
+      margin-top: -6px;
+      @include icon-link('icons.png', 0, -756px, 137px, 168px);
+    }
+
+    &#deviantart {
+      margin-top: 7px;
+      @include icon-link('icons.png', 0, 0, 166px, 186px);
+    }
+
+    &#tumblr {
+      margin-top: 4px;
+      @include icon-link('icons.png', 0, -550px, 144px, 191px);
+    }
+
+    &#mail {
+      margin-top: -11px;
+      @include icon-link('icons.png', 0, -351px, 151px, 184px);
+    }
+  }
+}
