@@ -23,10 +23,17 @@ module.exports = function(grunt) {
           environment: 'development'
         }
       },
+      clean: {
+        options: {
+          clean: true
+        }
+      },
       dist: {
         options: {
           environment: 'production',
           imagesDir: 'images-min',
+          outputStyle: 'compressed',
+          noLineComments: true,
           force: true
         }
       }
@@ -44,6 +51,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['compass:dist', 'imagemin']);
+  grunt.registerTask('default', ['compass:clean', 'compass:dist', 'imagemin']);
 };
 
